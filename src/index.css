@@ -1,68 +1,57 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
+@import "aos/dist/aos.css";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@custom-variant dark (&:where(.dark, .dark *));
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@theme {
+  --font-display: "Roboto", "sans-serif";
+  --breakpoint-*: initial;
+  --breakpoint-mobil: 375px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1440px;
+  --radius-primary: 30px;
+  --color-black: #121417;
+  --color-grey: #8a8a89;
+  --color-grey-light: #f8f8f8;
+  --color-dark: #2c2c2c;
+  --color-dark-light: #383838;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+  --color-accent: #f4c550;
+  --color-accent-light: #fbe9ba;
+  --color-gradient-from: #eeb055;
+  --color-gradient-to: #d08f38;
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  --color-yellow: #f4c550;
+  --color-yellow-light: #fbe9ba;
+  --color-gradient-yellow-from: #eeb055;
+  --color-gradient-yellow-to: #d08f38;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+  --color-green: #9fbaae;
+  --color-green-light: #cbded3;
+  --color-gradient-green-from: #295761;
+  --color-gradient-green-to: #183e49;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  --color-blue: #9fb7ce;
+  --color-blue-light: #bfd6ea;
+  --color-gradient-blue-from: #314b6e;
+  --color-gradient-blue-to: #1f385a;
+
+  --color-pink: #e0a39a;
+  --color-pink-light: #f2c0bd;
+  --color-gradient-pink-from: #b03f3e;
+  --color-gradient-pink-to: #982a27;
+
+  --color-orange: #f0aa8d;
+  --color-orange-light: #f4c8ba;
+  --color-gradient-orange-from: #e17650;
+  --color-gradient-orange-to: #ca5b38;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
