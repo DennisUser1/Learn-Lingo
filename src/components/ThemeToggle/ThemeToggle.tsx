@@ -1,0 +1,32 @@
+import { useEffect, useState } from "react";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+
+const ThemeToggle = () => {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(
+    localStorage.getItem("theme") === "dark"
+  );
+
+  useEffect(() => {
+    if (isDarkMode) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+    } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => setIsDarkMode(!isDarkMode);
+
+  return (
+    <button onClick={toggleTheme}>
+      {isDarkMode ? (
+        <BsFillSunFill size={24} color="#f8b400" />
+      ) : (
+        <BsFillMoonStarsFill size={24} color="#1e3a8a" />
+      )}
+    </button>
+  );
+};
+
+export default ThemeToggle;
