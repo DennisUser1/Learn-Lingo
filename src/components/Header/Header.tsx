@@ -1,3 +1,4 @@
+import AuthModal from "components/AuthModal/AuthModal";
 import AuthNav from "components/AuthNav/AuthNav";
 import Logo from "components/Logo/Logo";
 import Menu from "components/Menu/Menu";
@@ -38,6 +39,9 @@ const Header: React.FC<HeaderProps> = ({ isHomePage = false }) => {
 
         <ThemeToggle />
         {isMenuOpen && <Menu onAction={handleAction} />}
+        {isAuthModalOpen && (
+          <AuthModal mode={authMode} onAction={handleAction} />
+        )}
       </div>
     </header>
   );
