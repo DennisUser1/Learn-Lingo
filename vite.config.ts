@@ -10,6 +10,7 @@ export default defineConfig({
     alias: {
       components: "/src/components",
       pages: "/src/pages",
+      shared: "/src/shared",
     },
   },
 });

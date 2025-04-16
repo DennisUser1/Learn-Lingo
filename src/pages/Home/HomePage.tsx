@@ -1,11 +1,11 @@
+import HeroSection from "components/HeroSection/HeroSection";
 
-
-const HomePage = () => { 
-    return (
-        <main>
-
-        </main>
-    )
-}
+const HomePage = () => {
+  return (
+    <main className="container m-auto flex flex-col gap-6 px-4 pb-6 tablet:px-8 tablet:pb-8 desktop:px-16">
+      <HeroSection />
+    </main>
+  );
+};
 
 export default HomePage;
