@@ -1,5 +1,6 @@
 import { FiLogOut } from "react-icons/fi";
 import clsx from "clsx";
+import { useAuth } from "shared/hooks/useAuth";
 
 interface AuthNavProps {
   onAction: (mode?: "login" | "register") => void;
@@ -7,19 +8,23 @@ interface AuthNavProps {
 }
 
 const headerLoginLogoutBtn =
-  "flex gap-2 item-center text-base/tight font-bold cursor-pointer hover:text:grey transition-all duration-300 ease-in";
+  "flex gap-2 items-center text-base/tight font-bold cursor-pointer hover:text-grey transition-all duration-300 ease-in";
 const headerRegisterBtn =
   "bg-black dark:bg-dark-light rounded-xl px-10 py-3.5 text-white cursor-pointer hover:bg-grey transition-all duration-300 ease-in";
 const menuUniversalBtn =
   "bg-accent text-black flex gap-2 justify-center items-center text-base font-bold cursor-pointer border-2 border-accent box-border rounded-xl px-10 py-3.5 hover:bg-accent-light transition-all duration-300 ease-in";
 
 const AuthNav: React.FC<AuthNavProps> = ({ onAction, variant = "header" }) => {
+
+  const { user } = useAuth();
+  
   const handleLogout = () => {
     onAction();
   };
 
   return (
     <>
+    {user ? (
       <button
         onClick={handleLogout}
         className={
@@ -32,7 +37,7 @@ const AuthNav: React.FC<AuthNavProps> = ({ onAction, variant = "header" }) => {
         />
         Logout
       </button>
-
+    ) : (
       <div
         className={
           variant === "header" ? "flex gap-4" : "flex gap-4 w-full flex-col"
@@ -64,6 +69,7 @@ const AuthNav: React.FC<AuthNavProps> = ({ onAction, variant = "header" }) => {
           Registration
         </button>
       </div>
+    )}
     </>
   );
 };
