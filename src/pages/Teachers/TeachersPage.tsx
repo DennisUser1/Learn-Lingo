@@ -1,11 +1,11 @@
 import TeachersFilters from "components/TeachersFilters/TeachersFilters";
 
-const TeachersPage = () => { 
-   return (
+const TeachersPage = () => {
+  return (
     <main>
-         <TeachersFilters/>
+      <TeachersFilters filters={{}} setFilters={() => {}} teachers={[]} />
     </main>
-   )
-}
+  );
+};
 
 export default TeachersPage;
