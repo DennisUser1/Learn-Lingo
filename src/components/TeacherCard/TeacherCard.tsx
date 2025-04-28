@@ -1,9 +1,10 @@
 import TeacherAvatar from "components/TeacherAvatar/TeacherAvatar";
+import TeacherDescription from "components/TeacherDescription/TeacherDescription";
+import TeacherInfo from "components/TeacherInfo/TeacherInfo";
 import ToggleFavorite from "components/ToggleFavorite/ToggleFavorite";
 import { Teacher } from "shared/types/Teacher";
 
 const TeacherCard: React.FC<{ teacher: Teacher }> = ({ teacher }) => {
-    
   return (
     <li
       data-aos="fade-up"
@@ -15,6 +16,8 @@ const TeacherCard: React.FC<{ teacher: Teacher }> = ({ teacher }) => {
         toggleFavorite={toggleFavorite}
         isFavorite={isFavorite}
       />
+      <TeacherInfo teacher={teacher} />
+      <TeacherDescription />
     </li>
   );
 };
